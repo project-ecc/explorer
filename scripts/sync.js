@@ -65,7 +65,7 @@ if (process.argv[2] == 'index') {
 function create_lock(cb) {
   if ( database == 'index' ) {
     var fname = './tmp/' + database + '.pid';
-    fs.appendFile(fname, process.pid, function (err) {
+    fs.appendFile(fname, String(process.pid), function (err) {
       if (err) {
         console.log("Error: unable to create %s", fname);
         process.exit(1);
